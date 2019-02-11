@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class TestMain {
     public static void main(String[] args){
@@ -6,10 +6,10 @@ public class TestMain {
         q2178 test = new q2178();
         int N = sc.nextInt();
         int M = sc.nextInt();
-        int[] maze = new int[N];
+        String[] maze = new String[N];
 
         for(int i = 0; i< N;i++){
-            maze[i]=sc.nextInt();
+            maze[i]=sc.next();
         }
 
         int answer = test.findmaze(N,M,maze);
