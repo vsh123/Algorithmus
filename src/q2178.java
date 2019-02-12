@@ -1,6 +1,8 @@
 import java.util.*;
 
-/* 이슈 사항
+/*
+    문제 출처 : https://www.acmicpc.net/problem/2178
+    이슈 사항
     1. queue<T>의 사용 미흡(BFS) 공부 더 해야 함
         - poll(),peek() 차이 공부
     2. 초기 코드의 메모리 초과
@@ -11,6 +13,19 @@ import java.util.*;
 
 
 public class q2178 {
+    public int getnum(){
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        String[] maze = new String[N];
+
+        for(int i = 0; i< N;i++){
+            maze[i]=sc.next();
+        }
+        int answer = findmaze(N,M,maze);
+        return answer;
+    }
+
     //미로 탐색
     public int findmaze(int N, int M, String[] maze){
         int min = 999999999;
@@ -58,14 +73,4 @@ public class q2178 {
         return min;
     }
 
-}
-
-class xynum{
-    int x,y,num;
-
-    public xynum(int x, int y, int num){
-        this.x = x;
-        this.y = y;
-        this.num = num;
-    }
 }
