@@ -3,6 +3,7 @@
 */
 
 
+
 public class xynum {
     int x,y,num;
 
