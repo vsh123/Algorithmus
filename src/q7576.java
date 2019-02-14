@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.util.*;
+import java.io.*;
 
 /*
     문제 출처 : https://www.acmicpc.net/problem/7576
@@ -9,19 +10,28 @@ import java.util.*;
         -> Point를 이용한 방식 생각해보기
         -> Scanner 문제?
  */
-        public class q7576 {
-            public int getnum(){
-                Scanner sc = new Scanner(System.in);
-                int M = sc.nextInt();
-                int N = sc.nextInt();
-                int[][] tomato = new int[N][M]
-
-        for(int i = 0; i < N; i++){
-            for(int j = 0; j < M; j++){
-                tomato[i][j] = sc.nextInt();
-            }
-        }
-        int answer = alltomato(N,M,tomato);
+public class q7576 {
+    public int getnum(){
+//                Scanner sc = new Scanner(System.in);
+        int answer =0;
+                try {
+                    BufferedReader bf = new BufferedReader(new InputStreamReader(System.in)); //선언
+                    String s = bf.readLine();
+                    StringTokenizer st = new StringTokenizer(s);
+                    int M = Integer.parseInt(st.nextToken());
+                    int N = Integer.parseInt(st.nextToken());
+                    int[][] tomato = new int[N][M];
+                    for(int i = 0; i < N; i++){
+                        s = bf.readLine();
+                        st = new StringTokenizer(s);
+                        for(int j = 0; j < M; j++){
+                            tomato[i][j] = Integer.parseInt(st.nextToken());
+                        }
+                    }
+                    answer = alltomato(N,M,tomato);
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
         return answer;
     }
 
