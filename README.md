@@ -2,3 +2,8 @@
 # 해결한 문제들
 1. q2178 미로 탐색 (BFS,전체 탐색/넓이 우선 탐색)
  - https://www.acmicpc.net/problem/2178
+ 
+2. q7576 토마토 (BFS,전체 탐색/넓이 우선 탐색)
+ - https://www.acmicpc.net/problem/7576
+ 
+

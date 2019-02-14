@@ -1,6 +1,7 @@
 import java.util.*;
 
 /*
+    문제 : 미로 탐색(BFS)
     문제 출처 : https://www.acmicpc.net/problem/2178
     이슈 사항
     1. queue<T>의 사용 미흡(BFS) 공부 더 해야 함

@@ -8,7 +8,7 @@ import java.io.*;
     1. 메모리 사용량이 너무 많음
         -> 아마 xynum을 사용해서 ;인걸로 확인 됨(아니여따)
         -> Point를 이용한 방식 생각해보기
-        -> Scanner 문제?
+        -> Scanner 문제? ㅇㅇ 참고 : https://coding-factory.tistory.com/251
  */
 public class q7576 {
     public int getnum(){

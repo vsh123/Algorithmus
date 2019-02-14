@@ -2,8 +2,6 @@
     x, y , num을 담는 생성자
 */
 
-
-
 public class xynum {
     int x,y,num;
 
