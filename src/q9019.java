@@ -97,12 +97,3 @@ public class q9019 {
         return "1";
     }
 }
-
-class stringnum{
-    String name;
-    int num;
-    public stringnum(String name, int num){
-        this.name =name;
-        this.num = num;
-    }
-}
