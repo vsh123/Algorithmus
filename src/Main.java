@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-        MazeMaker test = new MazeMaker();
+        q1012 test = new q1012();
         test.getMaze();
     }
 }
