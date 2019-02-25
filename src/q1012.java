@@ -1,6 +1,13 @@
 import java.util.*;
 import java.io.*;
+/*
+    문제 : 유기농 배추(DFS)
 
+    문제 출처 : https://www.acmicpc.net/problem/1012
+
+    이슈 사항
+    1.
+ */
 
 public class q1012 {
     int[][] maze;
@@ -47,13 +54,6 @@ public class q1012 {
                     maze[i][j]=2;
                     count++;
                     dfs(i,j);
-                    for(int a =0 ;a < N;a++){
-                        for(int b =0; b<M;b++){
-                            System.out.print(maze[a][b]);
-                        }
-                        System.out.println();
-                    }
-                    System.out.println();
                 }
             }
         }
@@ -64,7 +64,7 @@ public class q1012 {
         for(int i = 0; i < 4; i++){
             int nx = x+dx[i];
             int ny = y+dy[i];
-            if(nx>=0 && nx<N && ny>=0 && ny<N && maze[nx][ny]==1){
+            if(nx>=0 && nx<N && ny>=0 && ny<M && maze[nx][ny]==1){
                 maze[nx][ny]=2;
                 dfs(nx,ny);
             }
