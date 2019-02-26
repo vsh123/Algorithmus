@@ -4,7 +4,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-        q14852 test = new q14852();
-        test.tiling();
+        Clothes test = new Clothes();
+        String[][] s = {{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}};
+        test.solution(s);
     }
 }
