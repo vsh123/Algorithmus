@@ -4,8 +4,9 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-        Clothes test = new Clothes();
-        String[][] s = {{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}};
-        test.solution(s);
+        BestAlbum test = new BestAlbum();
+        String[] genres = {"classic", "pop", "classic", "classic", "pop","van","park"};
+        int[] plays = {500,600,150,800,2500,20,50};
+        test.solution(genres,plays);
     }
 }

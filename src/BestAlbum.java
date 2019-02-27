@@ -2,48 +2,71 @@ import java.util.*;
 
 public class BestAlbum {
 
-    Comparator<song> Compplay = new Comparator<song>() {
+    Comparator<rank> Compcount = new Comparator<rank>() {
         @Override
-        public int compare(song o1, song o2) {
-            return o1.play-o2.play;
+        public int compare(rank o1, rank o2) {
+            System.out.println(o1.count + " " +o2.count);
+            return o1.count-o2.count;
         }
     };
 
     public int[] solution(String[] genres, int[] plays) {
         int[] answer;
-        int idx =0;
-        Map<String,Integer> map = new HashMap<String,Integer>();
-        List<song> list = new LinkedList<song>();
+        Map<String,rank> map = new HashMap<String,rank>();
+        List<rank> list = new LinkedList<rank>();
 
-        for(int i = 0;i < genres.length; i++){
-            if(map.containsKey(genres[i]))
-                map.put(genres[i],map.get(genres[i])+plays[i]);
-            else
-                map.put(genres[i],plays[i]);
+        for(int i = 0; i < genres.length;i++){
+            if(map.containsKey(genres[i])){
+                if(map.get(genres[i]).first!=-1&&plays[map.get(genres[i]).first]<plays[i]){
+                   map.put(genres[i],new rank(i, map.get(genres[i]).first,map.get(genres[i]).count + plays[i]));
+                }
+                else if(map.get(genres[i]).first==-1){
+                    map.put(genres[i],new rank(map.get(genres[i]).first, i,map.get(genres[i]).count + plays[i]));
+                }
+                else if(map.get(genres[i]).second!=-1&&plays[map.get(genres[i]).second]<plays[i]){
+                    map.put(genres[i],new rank(map.get(genres[i]).first, i,map.get(genres[i]).count + plays[i]));
+                }
+                else{
+                    map.put(genres[i],new rank(map.get(genres[i]).first, map.get(genres[i]).second,map.get(genres[i]).count + plays[i]));
+                }
+            }
+            else{
+                map.put(genres[i],new rank(i, -1, plays[i]));
+            }
         }
 
         for(String key : map.keySet()){
-            list.add(new song(key,map.get(key)));
+            System.out.println(key + " " +map.get(key).count );
+            list.add(new rank(map.get(key).first,map.get(key).second,map.get(key).count));
         }
 
-        answer = new int[2*list.size()];
+        answer = new int[list.size()*2];
 
-        list.sort(Compplay);
-        for(int i = 0; i< list.size(); i++){
-            List<song> temp = new LinkedList<song>();
-            for(int j = 0; j < genres.length;j++){
-                if(list.get(i).equals())
-            }
+        Collections.sort(list, Compcount);
+
+        for(String key : map.keySet()){
+            System.out.println(key + " " +map.get(key).count );
         }
+
+        for(int i = 0;i<list.size();i++){
+            System.out.println(list.get(i).first);
+            System.out.println(list.get(i).second);
+            answer[i*2] = list.get(i).first;
+            answer[i*2+1] = list.get(i).second;
+        }
+
         return answer;
     }
 
-    class song{
-        String name;
-        int play;
-        public song(String name,int play){
-            this.name = name;
-            this.play = play;
+
+    class rank{
+        int first;
+        int second;
+        int count;
+        public rank(int first,int second, int count){
+            this.first = first;
+            this.second = second;
+            this.count = count;
         }
     }
 }
