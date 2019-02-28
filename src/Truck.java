@@ -18,50 +18,47 @@ public class Truck {
         }
     }
 
-    Comparator<truck> compare = new Comparator<truck>() {
-        @Override
-        public int compare(truck o1, truck o2) {
-            return o2.weight - o1.weight;
-        }
-    };
 
     public int solution(int bridge_length, int weight, int[] truck_weights) {
         int answer = 0;
         int time = 0;
         int size=0;
         List<truck> list = new LinkedList<truck>();
-        List<truck> now = new LinkedList<truck>();
+        List<truck> list2 = new LinkedList<truck>();
 
         for(int i = 0; i < truck_weights.length;i++){
-            list.add(new truck(truck_weights[i],0));
+            list.add(new truck(truck_weights[i],bridge_length));
         }
 
-        list.sort(compare);
-
-        while(!list.isEmpty()){
-            List<Integer> temp = new ArrayList<Integer>();
-            for(int i = 0; i< list.size();i++){
-                if(list.get(i).weight+size<=weight){
-                    now.add(new truck(list.get(i).weight,0));
-                    temp.add(i);
-                    size += list.get(i).weight;
-                }
-            }
-            for(int i =temp.size()-1;i>=0;i--){
-                System.out.println("remove : "+ list.get(temp.get(i)).weight + " time :"+time);
-                list.remove(temp.get(i));
-            }
-            for(int i =now.size()-1; i>=0; i--){
-                now.get(i).time++;
-                if(now.get(i).time==bridge_length){
-                    size -= now.get(i).weight;
-                    now.remove(i);
-                }
-            }
+        while(true){
             time++;
-        }
+            if(!list.isEmpty()) {
+                truck temp = list.get(0);
+                if (temp.weight + size <= weight) {
+                    size = temp.weight + size;
+                    list2.add(temp);
+                    ((LinkedList<truck>) list).removeFirst();
+                }
+            }
+            boolean isend =false;
+            for(truck s : list2){
+//                System.out.println(time+" "+ s.weight+ " " + s.time );
+                s.time--;
+                if(s.time==0) {
+                    size -= s.weight;
+                    isend = true;
+                }
+            }
 
-        System.out.println(time);
+            if(isend)
+                ((LinkedList<truck>) list2).removeFirst();
+
+            if(list.isEmpty()&&list2.isEmpty())
+                break;
+
+        }
+        time++;
+//        System.out.println(time);
 
         return time;
     }
