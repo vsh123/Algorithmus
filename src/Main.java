@@ -4,7 +4,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-        q14502 test = new q14502();
-        test.getMaze();
+        H_Index test = new H_Index();
+        int[] number = {25,8,5,3,3};
+        System.out.println(test.solution(number));
     }
 }
