@@ -16,7 +16,7 @@ public class TargetNumber {
     int goal;
     int[] number;
     public int solution(int[] numbers, int target) {
-        number = new int[numbers.length];
+        number = new int[numbers.length];           //numbers 복사(전역 변수로 쓰기 위해서)
         for(int i =0; i<number.length;i++){
             number[i] = numbers[i];
         }
@@ -28,10 +28,10 @@ public class TargetNumber {
     }
 
     public void dfs(int depth, int num){
-        int tp = num + number[depth];
+        int tp = num + number[depth];       //더하기, 빼기로 구분
         int tp2 = num - number[depth];
         depth++;
-        if(depth==number.length){
+        if(depth==number.length){          //모든 수를 사용했으며, 만약 타겟 넘버가 맞다면 answer ++;
             if(tp == goal)
                 answer++;
             if(tp2 == goal)
