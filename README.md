@@ -2,7 +2,7 @@
 # 해결한 문제들
 q2178 미로 탐색 (BFS,전체 탐색/넓이 우선 탐색)
  - 문제 : https://www.acmicpc.net/problem/2178
- - 풀이 : https://github.com/vsh123/Algorithmus/blob/sunho/src/q2178.java
+ - 풀이 : https://github.com/vsh123/Algorithmus/blob/sunho/src/q2178.java                                                                                                
  
 q7576 토마토 (BFS,전체 탐색/넓이 우선 탐색)
  - 문제 : https://www.acmicpc.net/problem/7576
