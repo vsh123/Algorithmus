@@ -1,10 +1,9 @@
-import java.io.*;
-import java.util.*;
+import DynamicProgramming.*;
 
 
 public class Main {
     public static void main(String[] args){
-        FindDecimal test = new FindDecimal();
-        System.out.println(test.solution("17"));
+        Nexpression test = new Nexpression();
+        test.solution(1,10);
     }
 }
