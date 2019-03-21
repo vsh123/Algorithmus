@@ -1,11 +1,10 @@
-import java.util.*;
-import java.io.*;
+import VanTest.Toji;
 
 
 public class Main {
     public static void main(String[] args){
-        q14501 test = new q14501();
-        test.goHome();
+        Toji test = new Toji();
+        test.solution();
     }
 }
 
