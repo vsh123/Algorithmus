@@ -1,9 +1,11 @@
-import DynamicProgramming.*;
+import java.util.*;
+import java.io.*;
 
 
 public class Main {
     public static void main(String[] args){
-        Nexpression test = new Nexpression();
-        test.solution(1,10);
+        q14501 test = new q14501();
+        test.goHome();
     }
 }
+
