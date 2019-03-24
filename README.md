@@ -28,6 +28,3 @@ q11403 경로 찾기 (DFS,전체 탐색/깊이 우선 탐색)
  - 문제 : https://www.acmicpc.net/problem/11403
  - 풀이 : https://github.com/vsh123/Algorithmus/blob/sunho/src/q11403.java
 
-'''
-qwerqewr
-'''
